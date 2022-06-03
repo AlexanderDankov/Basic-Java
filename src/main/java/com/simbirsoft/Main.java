@@ -15,6 +15,19 @@ public class Main {
         anotherCat.feedAnimal();
         anotherCat.checkWeight(anotherCat.weight);
 
+        Animal mouse = new Mouse("Джерри", 5);
 
+        mouse.sayHelloToAnimal();
+        mouse.setNewName("Микки");
+        mouse.feedAnimal();
+        mouse.checkWeight(mouse.weight);
+
+        Animal parrot = new Parrot("Кеша", 10);
+
+        parrot.sayHelloToAnimal();
+        parrot.setNewName("Ара");
+        parrot.checkWeight(parrot.weight);
+        parrot.feedAnimal();
+        parrot.checkWeight(parrot.weight);
     }
 }
