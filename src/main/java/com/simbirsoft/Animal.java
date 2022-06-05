@@ -1,24 +1,39 @@
 package com.simbirsoft;
 
 public class Animal {
-    String type;
-    int weight;
-    String name;
-    boolean isPredator;
-    String[] trainingItems = new String[3];
-    String[] feedingMenu = new String[4];
+    protected String type;
+    protected int weight;
+    protected String name;
+    protected boolean isPredator;
+    protected String[] trainingItems = new String[3];
+    protected String[] feedingMenu = new String[4];
 
+    public void setType(String type) {
+        this.type = type;
+    }
 
-    void sayHelloToAnimal() {
+    public void setPredator(boolean predator) {
+        isPredator = predator;
+    }
+
+    public void setTrainingItems(String[] trainingItems) {
+        this.trainingItems = trainingItems;
+    }
+
+    public void setFeedingMenu(String[] feedingMenu) {
+        this.feedingMenu = feedingMenu;
+    }
+
+    public void sayHelloToAnimal() {
         System.out.println("Привет! Я " + this.type + ". И меня зовут " + this.name);
     }
 
-    void setNewName(String newName) {
+    public void setNewName(String newName) {
         name = newName;
         System.out.println("Ты изменил мое имя на " + name);
     }
 
-    void feedAnimal() {
+    public void feedAnimal() {
         for (String menu : feedingMenu) {
             if (isPredator) {
                 this.weight += 5;
@@ -31,7 +46,7 @@ public class Animal {
 
     }
 
-    void animalTraining() {
+    public void animalTraining() {
         while (this.weight > 20) {
             for (String trainingItem : trainingItems) {
                 this.weight -= 2;
@@ -41,7 +56,7 @@ public class Animal {
         checkWeight(this.weight);
     }
 
-    void checkWeight(int weight) {
+    public void checkWeight(int weight) {
         if (weight > 20) {
             System.out.println("Нужно срочно сбросить вес! Запускаем тренировку");
             animalTraining();
